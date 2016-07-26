@@ -1,0 +1,41 @@
+﻿#banner1 {
+    width: 960px;
+    height: 250px;
+    margin: auto;
+    background: url(Pictures/pizza-2.jpg) repeat 0 0;
+    background-size: cover;
+    font: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+    #banner1 h1 {
+        font-size: 68px;
+        letter-spacing: 20px;
+    }
+
+    #banner1 label {
+        font-size: large;
+        padding-left: 5px;
+    }
+
+#lista1 {
+    clear: both;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+}
+
+    #lista1 li {
+        float: left;
+        list-style-type:none;
+        border-color:black;
+        text-align:center;
+    }
+
+        #lista1 li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }

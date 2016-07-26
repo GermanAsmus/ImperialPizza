@@ -173,7 +173,15 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Pictures\empanadas-1.jpg" />
+    <Content Include="Content\Pictures\pizza-1.jpg" />
+    <Content Include="Content\Pictures\pizza-2.jpg" />
+    <Content Include="Content\Pictures\pizza-3.jpg" />
+    <Content Include="Content\Pictures\pizza-4.jpg" />
+    <Content Include="Content\Pictures\pizza-5.jpg" />
+    <Content Include="Content\Pictures\pizza-logo.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
