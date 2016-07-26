@@ -20,9 +20,10 @@
 
 #lista1 {
     clear: both;
-    margin: 0;
+    margin: 5px;
     padding: 5px;
     overflow: hidden;
+    align-self:center;
 }
 
     #lista1 li {
@@ -39,3 +40,11 @@
             padding: 16px;
             text-decoration: none;
         }
+#row1{
+    color:white;
+    align-self:center;
+}
+#row1 h2{
+    text-align:center;
+    text-decoration:underline;
+}

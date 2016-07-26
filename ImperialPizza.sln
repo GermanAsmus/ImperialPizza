@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImperialPizza", "ImperialPizza\ImperialPizza.csproj", "{332EB2E5-46D0-4DAE-805D-BA7AB33DA060}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaMVC", "PizzaMVC\PizzaMVC.csproj", "{06F5FF63-769D-4049-900E-ED26A1BFDF9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{332EB2E5-46D0-4DAE-805D-BA7AB33DA060}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{332EB2E5-46D0-4DAE-805D-BA7AB33DA060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{332EB2E5-46D0-4DAE-805D-BA7AB33DA060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F5FF63-769D-4049-900E-ED26A1BFDF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F5FF63-769D-4049-900E-ED26A1BFDF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F5FF63-769D-4049-900E-ED26A1BFDF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F5FF63-769D-4049-900E-ED26A1BFDF9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
