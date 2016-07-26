@@ -29,5 +29,9 @@ namespace PizzaMVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PizzaMVC.Models.Event> Events { get; set; }
+
+        public System.Data.Entity.DbSet<PizzaMVC.Models.Pizza> Pizzas { get; set; }
     }
 }
