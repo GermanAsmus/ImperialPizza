@@ -52,6 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/">¡Pedí Ahora!</a></li>
+                        <li><a runat="server" href="~/Eventos">Eventos</a></li>
                         <li><a runat="server" href="~/About">¿Quienes Somos?</a></li>
                         <li><a runat="server" href="~/Contact">Contactá Con Nosotros</a></li>
                     </ul>
