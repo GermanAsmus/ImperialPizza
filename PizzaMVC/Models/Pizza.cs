@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PizzaMVC.Models
 {
     public class Pizza
     {
+        [Key]
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public float Precio { get; set; }
-        public Receta Receta { get; set; }
+        public decimal Precio { get; set; }
+        public string Receta { get; set; }
     }
 }

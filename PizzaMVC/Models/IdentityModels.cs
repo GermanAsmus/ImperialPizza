@@ -34,8 +34,6 @@ namespace PizzaMVC.Models
 
         public System.Data.Entity.DbSet<PizzaMVC.Models.Pizza> Pizzas { get; set; }
 
-        public System.Data.Entity.DbSet<PizzaMVC.Models.Detalle> Detalles { get; set; }
-
-        public System.Data.Entity.DbSet<PizzaMVC.Models.Ingrediente> Ingredientes { get; set; }
+        public System.Data.Entity.DbSet<PizzaMVC.Models.Pedido> Pedidos { get; set; }
     }
 }

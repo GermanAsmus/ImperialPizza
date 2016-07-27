@@ -168,32 +168,42 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DetallesController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IngredientesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PedidoesController.cs" />
     <Compile Include="Controllers\PizzasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607262008012_initial.cs" />
-    <Compile Include="Migrations\201607262008012_initial.Designer.cs">
-      <DependentUpon>201607262008012_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201607262134560_initial.cs" />
+    <Compile Include="Migrations\201607262134560_initial.Designer.cs">
+      <DependentUpon>201607262134560_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607262027277_migration1.cs" />
-    <Compile Include="Migrations\201607262027277_migration1.Designer.cs">
-      <DependentUpon>201607262027277_migration1.cs</DependentUpon>
+    <Compile Include="Migrations\201607262306406_initial2.cs" />
+    <Compile Include="Migrations\201607262306406_initial2.Designer.cs">
+      <DependentUpon>201607262306406_initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607262350432_initial3.cs" />
+    <Compile Include="Migrations\201607262350432_initial3.Designer.cs">
+      <DependentUpon>201607262350432_initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271308528_initial4.cs" />
+    <Compile Include="Migrations\201607271308528_initial4.Designer.cs">
+      <DependentUpon>201607271308528_initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271403351_initial5.cs" />
+    <Compile Include="Migrations\201607271403351_initial5.Designer.cs">
+      <DependentUpon>201607271403351_initial5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Detalle.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Ingrediente.cs" />
+    <Compile Include="Models\LineaPedido.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Pizza.cs" />
-    <Compile Include="Models\Receta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -262,16 +272,12 @@
     <Content Include="Views\Pizzas\Details.cshtml" />
     <Content Include="Views\Pizzas\Edit.cshtml" />
     <Content Include="Views\Pizzas\Index.cshtml" />
-    <Content Include="Views\Detalles\Create.cshtml" />
-    <Content Include="Views\Detalles\Delete.cshtml" />
-    <Content Include="Views\Detalles\Details.cshtml" />
-    <Content Include="Views\Detalles\Edit.cshtml" />
-    <Content Include="Views\Detalles\Index.cshtml" />
-    <Content Include="Views\Ingredientes\Create.cshtml" />
-    <Content Include="Views\Ingredientes\Delete.cshtml" />
-    <Content Include="Views\Ingredientes\Details.cshtml" />
-    <Content Include="Views\Ingredientes\Edit.cshtml" />
-    <Content Include="Views\Ingredientes\Index.cshtml" />
+    <Content Include="Views\Pizzas\VerReceta.cshtml" />
+    <Content Include="Views\Pedidoes\Create.cshtml" />
+    <Content Include="Views\Pedidoes\Delete.cshtml" />
+    <Content Include="Views\Pedidoes\Details.cshtml" />
+    <Content Include="Views\Pedidoes\Edit.cshtml" />
+    <Content Include="Views\Pedidoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,11 +291,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607262008012_initial.resx">
-      <DependentUpon>201607262008012_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607262134560_initial.resx">
+      <DependentUpon>201607262134560_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607262027277_migration1.resx">
-      <DependentUpon>201607262027277_migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607262306406_initial2.resx">
+      <DependentUpon>201607262306406_initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607262350432_initial3.resx">
+      <DependentUpon>201607262350432_initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271308528_initial4.resx">
+      <DependentUpon>201607271308528_initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271403351_initial5.resx">
+      <DependentUpon>201607271403351_initial5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,107 +10,107 @@ using PizzaMVC.Models;
 
 namespace PizzaMVC.Controllers
 {
-    public class IngredientesController : Controller
+    public class PedidoesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Ingredientes
+        // GET: Pedidoes
         public ActionResult Index()
         {
-            return View(db.Ingredientes.ToList());
+            return View(db.Pedidos.ToList());
         }
 
-        // GET: Ingredientes/Details/5
+        // GET: Pedidoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ingrediente ingrediente = db.Ingredientes.Find(id);
-            if (ingrediente == null)
+            Pedido pedido = db.Pedidos.Find(id);
+            if (pedido == null)
             {
                 return HttpNotFound();
             }
-            return View(ingrediente);
+            return View(pedido);
         }
 
-        // GET: Ingredientes/Create
+        // GET: Pedidoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Ingredientes/Create
+        // POST: Pedidoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nombre")] Ingrediente ingrediente)
+        public ActionResult Create([Bind(Include = "ID,Cliente,Direccion,Precio,Fecha,Hora")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {
-                db.Ingredientes.Add(ingrediente);
+                db.Pedidos.Add(pedido);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(ingrediente);
+            return View(pedido);
         }
 
-        // GET: Ingredientes/Edit/5
+        // GET: Pedidoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ingrediente ingrediente = db.Ingredientes.Find(id);
-            if (ingrediente == null)
+            Pedido pedido = db.Pedidos.Find(id);
+            if (pedido == null)
             {
                 return HttpNotFound();
             }
-            return View(ingrediente);
+            return View(pedido);
         }
 
-        // POST: Ingredientes/Edit/5
+        // POST: Pedidoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nombre")] Ingrediente ingrediente)
+        public ActionResult Edit([Bind(Include = "ID,Cliente,Direccion,Precio,Fecha,Hora")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ingrediente).State = EntityState.Modified;
+                db.Entry(pedido).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(ingrediente);
+            return View(pedido);
         }
 
-        // GET: Ingredientes/Delete/5
+        // GET: Pedidoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ingrediente ingrediente = db.Ingredientes.Find(id);
-            if (ingrediente == null)
+            Pedido pedido = db.Pedidos.Find(id);
+            if (pedido == null)
             {
                 return HttpNotFound();
             }
-            return View(ingrediente);
+            return View(pedido);
         }
 
-        // POST: Ingredientes/Delete/5
+        // POST: Pedidoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ingrediente ingrediente = db.Ingredientes.Find(id);
-            db.Ingredientes.Remove(ingrediente);
+            Pedido pedido = db.Pedidos.Find(id);
+            db.Pedidos.Remove(pedido);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

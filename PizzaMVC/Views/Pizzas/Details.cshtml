@@ -1,10 +1,10 @@
 ﻿@model PizzaMVC.Models.Pizza
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<h2>Detalle</h2>
 
 <div>
     <h4>Pizza</h4>
@@ -34,9 +34,17 @@
             @Html.DisplayFor(model => model.Precio)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Receta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receta)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
 </p>
