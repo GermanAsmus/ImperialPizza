@@ -1,11 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: orangered;
+    background: url(Images/b23.png) repeat right top fixed;
+    font: Arial, Helvetica, sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
+    /*padding-left: 15px;*/
     padding-right: 15px;
 }
 
@@ -22,3 +25,124 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#slideShowImages { /* The following CSS rules are optional. */
+    position: relative;
+    /*padding: 10px;*/
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    height: 600px;
+    width: 75%;
+}
+
+    #slideShowImages img { /* The following CSS rules are optional. */
+        height: 600px;
+        width: 800px;
+        resize: both;
+        padding: 10px;
+        position: absolute;
+    }
+
+.fixedPosition {
+    position: fixed;
+}
+
+.boton-comprar {
+    display: inline-block;
+    border-radius: 4px;
+    border: double;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.boton-sm {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+    .boton-sm span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .boton-sm span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .boton-sm:hover span {
+        padding-right: 25px;
+    }
+
+        .boton-sm:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+.left-side-body {
+    width: 800px;
+}
+
+.left-side-content {
+    min-height: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.imagen1 {
+    height: 128px;
+    width: 128px;
+    resize: both;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.right-sidebar {
+    right: 50px;
+    float: right;
+    height: 100%;
+}
+
+    .right-sidebar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+    }
+
+        .right-sidebar ul li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            .right-sidebar ul li a:hover {
+                background-color: #555;
+                color: white;
+            }
