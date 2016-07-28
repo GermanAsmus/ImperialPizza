@@ -34,9 +34,17 @@
             @Html.DisplayFor(model => model.Precio)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Receta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receta)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PizzaID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

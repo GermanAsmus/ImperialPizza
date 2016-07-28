@@ -3,7 +3,7 @@ namespace PizzaMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -11,23 +11,65 @@ namespace PizzaMVC.Migrations
                 "dbo.Events",
                 c => new
                     {
-                        ID = c.Int(nullable: false, identity: true),
+                        EventID = c.Int(nullable: false, identity: true),
                         Nombre = c.String(),
                         Descripcion = c.String(),
-                        Fecha = c.DateTime(nullable: false),
+                        Fecha = c.String(),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.EventID);
+            
+            CreateTable(
+                "dbo.LineaEventoes",
+                c => new
+                    {
+                        LineaEventoID = c.Int(nullable: false, identity: true),
+                        EventID = c.Int(nullable: false),
+                        PizzaID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.LineaEventoID)
+                .ForeignKey("dbo.Events", t => t.EventID, cascadeDelete: true)
+                .ForeignKey("dbo.Pizzas", t => t.PizzaID, cascadeDelete: true)
+                .Index(t => t.EventID)
+                .Index(t => t.PizzaID);
             
             CreateTable(
                 "dbo.Pizzas",
                 c => new
                     {
-                        ID = c.Int(nullable: false, identity: true),
-                        Nombre = c.String(),
-                        Descripcion = c.String(),
-                        Precio = c.Single(nullable: false),
+                        PizzaID = c.Int(nullable: false, identity: true),
+                        Nombre = c.String(nullable: false, maxLength: 80),
+                        Descripcion = c.String(nullable: false, maxLength: 200),
+                        Precio = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Receta = c.String(nullable: false, maxLength: 800),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.PizzaID);
+            
+            CreateTable(
+                "dbo.LineaPedidoes",
+                c => new
+                    {
+                        LineaPedidoID = c.Int(nullable: false, identity: true),
+                        PedidoID = c.Int(nullable: false),
+                        PizzaID = c.Int(nullable: false),
+                        Cantidad = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.LineaPedidoID)
+                .ForeignKey("dbo.Pedidoes", t => t.PedidoID, cascadeDelete: true)
+                .ForeignKey("dbo.Pizzas", t => t.PizzaID, cascadeDelete: true)
+                .Index(t => t.PedidoID)
+                .Index(t => t.PizzaID);
+            
+            CreateTable(
+                "dbo.Pedidoes",
+                c => new
+                    {
+                        PedidoID = c.Int(nullable: false, identity: true),
+                        Cliente = c.String(),
+                        Direccion = c.String(),
+                        Fecha = c.DateTime(nullable: false),
+                        Hora = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.PedidoID);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -105,18 +147,29 @@ namespace PizzaMVC.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.LineaPedidoes", "PizzaID", "dbo.Pizzas");
+            DropForeignKey("dbo.LineaPedidoes", "PedidoID", "dbo.Pedidoes");
+            DropForeignKey("dbo.LineaEventoes", "PizzaID", "dbo.Pizzas");
+            DropForeignKey("dbo.LineaEventoes", "EventID", "dbo.Events");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.LineaPedidoes", new[] { "PizzaID" });
+            DropIndex("dbo.LineaPedidoes", new[] { "PedidoID" });
+            DropIndex("dbo.LineaEventoes", new[] { "PizzaID" });
+            DropIndex("dbo.LineaEventoes", new[] { "EventID" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Pedidoes");
+            DropTable("dbo.LineaPedidoes");
             DropTable("dbo.Pizzas");
+            DropTable("dbo.LineaEventoes");
             DropTable("dbo.Events");
         }
     }
