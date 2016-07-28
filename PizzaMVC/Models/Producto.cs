@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PizzaMVC.Models
 {
-    public class Pizza
+    public class Producto
     {
-        [Key]        
-        public int PizzaID { get; set; }
+        [Key]
+        [Display(Name = "Producto")]
+        public int ProductoID { get; set; }
 
         [Display(Name = "Nombre")]
         [Required(ErrorMessage ="Ingresar {0}")]
@@ -18,22 +19,17 @@ namespace PizzaMVC.Models
         [StringLength(200, MinimumLength = 1)]
         public string Descripcion { get; set; }
 
-        [Display(Name = "Precio $")]
+        [DataType(DataType.Currency)]
+        [Display(Name = "Precio")]
         [Required(ErrorMessage = "Ingresar {0}")]
         [DisplayFormat(DataFormatString ="{0:C2}",ApplyFormatInEditMode = false)]
         public decimal Precio { get; set; }
 
-        [Display(Name = "Receta")]
-        [Required(ErrorMessage = "Ingresar {0}")]
-        [StringLength(800, MinimumLength = 1)]
-        public string Receta { get; set; }
 
-        [Display(Name = "Lineas")]
-        [Required(ErrorMessage = "Ingresar {0}")]
-        public ICollection<LineaPedido> LineasPedido { get; set; }
+        [Display(Name = "Detalle Pedidos")]
+        public virtual ICollection<DetallePedido> DetallePedidos { get; set; }
 
-        [Display(Name = "Eventos")]
-        [Required(ErrorMessage = "Ingresar {0}")]
-        public ICollection<LineaEvento> LineasEvento { get; set; }
+        [Display(Name = "Detalle Eventos")]
+        public virtual ICollection<DetalleEvento> DetalleEventos { get; set; }
     }
 }

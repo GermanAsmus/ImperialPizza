@@ -6,13 +6,14 @@ using System.Web;
 
 namespace PizzaMVC.Models
 {
-    public class LineaEvento
+    public class DetalleEvento
     {
         [Key]
-        public int LineaEventoID { get; set; }
+        public int DetalleEventoID { get; set; }
+        public int ProductoID { get; set; }
         public int EventID { get; set; }
-        public int PizzaID { get; set; }
+
         public virtual Event Event { get; set; }
-        public virtual Pizza Pizza { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }
