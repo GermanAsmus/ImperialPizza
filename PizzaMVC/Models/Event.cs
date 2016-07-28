@@ -13,6 +13,6 @@ namespace PizzaMVC.Models
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Fecha { get; set; }
-        public virtual ICollection<LineaEvento> LineasEvento { get; set; }
+        public virtual ICollection<DetalleEvento> DetallesEventos { get; set; }
     }
 }

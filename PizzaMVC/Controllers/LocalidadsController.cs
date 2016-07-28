@@ -10,107 +10,107 @@ using PizzaMVC.Models;
 
 namespace PizzaMVC.Controllers
 {
-    public class PizzasController : Controller
+    public class LocalidadsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Pizzas
+        // GET: Localidads
         public ActionResult Index()
         {
-            return View(db.Pizzas.ToList());
+            return View(db.Localidads.ToList());
         }
 
-        // GET: Pizzas/Details/5
+        // GET: Localidads/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pizza pizza = db.Pizzas.Find(id);
-            if (pizza == null)
+            Localidad localidad = db.Localidads.Find(id);
+            if (localidad == null)
             {
                 return HttpNotFound();
             }
-            return View(pizza);
+            return View(localidad);
         }
 
-        // GET: Pizzas/Create
+        // GET: Localidads/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Pizzas/Create
+        // POST: Localidads/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PizzaID,Nombre,Descripcion,Precio,Receta")] Pizza pizza)
+        public ActionResult Create([Bind(Include = "LocalidadID,Nombre")] Localidad localidad)
         {
             if (ModelState.IsValid)
             {
-                db.Pizzas.Add(pizza);
+                db.Localidads.Add(localidad);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pizza);
+            return View(localidad);
         }
 
-        // GET: Pizzas/Edit/5
+        // GET: Localidads/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pizza pizza = db.Pizzas.Find(id);
-            if (pizza == null)
+            Localidad localidad = db.Localidads.Find(id);
+            if (localidad == null)
             {
                 return HttpNotFound();
             }
-            return View(pizza);
+            return View(localidad);
         }
 
-        // POST: Pizzas/Edit/5
+        // POST: Localidads/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PizzaID,Nombre,Descripcion,Precio,Receta")] Pizza pizza)
+        public ActionResult Edit([Bind(Include = "LocalidadID,Nombre")] Localidad localidad)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pizza).State = EntityState.Modified;
+                db.Entry(localidad).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(pizza);
+            return View(localidad);
         }
 
-        // GET: Pizzas/Delete/5
+        // GET: Localidads/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pizza pizza = db.Pizzas.Find(id);
-            if (pizza == null)
+            Localidad localidad = db.Localidads.Find(id);
+            if (localidad == null)
             {
                 return HttpNotFound();
             }
-            return View(pizza);
+            return View(localidad);
         }
 
-        // POST: Pizzas/Delete/5
+        // POST: Localidads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Pizza pizza = db.Pizzas.Find(id);
-            db.Pizzas.Remove(pizza);
+            Localidad localidad = db.Localidads.Find(id);
+            db.Localidads.Remove(localidad);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,101 @@
+﻿@model PizzaMVC.ViewModels.PedidoView
+
+@{
+    ViewBag.Title = "Nuevo Pedido";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal well">
+        <h2>Nuevo Pedido</h2>
+        <h4>Cliente</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cliente, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cliente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Localidad.LocalidadID, "Localidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("LocalidadID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Localidad.LocalidadID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Agregar Producto", "AgregarProducto", new { }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+
+        <h2>Detalle Pedido</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Valor)
+                </th>
+                <th></th>
+            </tr>
+
+            @for (int i = 0; i < Model.Productos.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Productos[i].Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Productos[i].Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Productos[i].Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Productos[i].Valor)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Productos[i].ProductoID }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = Model.Productos[i].ProductoID })
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Confirmar" id="NuevoPedido" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

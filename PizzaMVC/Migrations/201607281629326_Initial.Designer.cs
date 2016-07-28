@@ -13,7 +13,7 @@ namespace PizzaMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201607280155071_Initial"; }
+            get { return "201607281629326_Initial"; }
         }
         
         string IMigrationMetadata.Source

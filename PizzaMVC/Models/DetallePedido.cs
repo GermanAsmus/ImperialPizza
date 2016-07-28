@@ -7,15 +7,17 @@ using System.Web;
 
 namespace PizzaMVC.Models
 {
-    public class LineaPedido
+    public class DetallePedido
     {
         [Key]
-        public int LineaPedidoID { get; set; }
+        public int DetallePedidoID { get; set; }
         public int PedidoID { get; set; }
-        public int PizzaID { get; set; }
+        public int ProductoID { get; set; }
+        public string Descripcion { get; set; }
+        public float Cantidad { get; set; }
+        public decimal Precio { get; set; }
+
         public virtual Pedido Pedido { get; set; }
-        public virtual Pizza Pizza { get; set; }
-        public int Cantidad { get; set; }
-        public decimal Precio { get { return this.Pizza.Precio * this.Cantidad; } }
+        public virtual Producto Producto { get; set; }
     }
 }

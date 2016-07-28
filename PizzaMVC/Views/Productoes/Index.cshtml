@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PizzaMVC.Models.Pizza>
+﻿@model IEnumerable<PizzaMVC.Models.Producto>
 
 @{
     ViewBag.Title = "Index";
@@ -20,9 +20,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Precio)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Receta)
-        </th>
         <th></th>
     </tr>
 
@@ -38,12 +35,9 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Receta)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PizzaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PizzaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PizzaID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductoID })
         </td>
     </tr>
 }
