@@ -8,10 +8,11 @@ namespace PizzaMVC.Models
 {
     public class Event
     {
-        public int ID { get; set; }
+        [Key]
+        public int EventID { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Fecha { get; set; }
-        public string Pizzas { get; set; }
+        public virtual ICollection<LineaEvento> LineasEvento { get; set; }
     }
 }

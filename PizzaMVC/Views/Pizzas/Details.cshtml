@@ -1,10 +1,10 @@
 ﻿@model PizzaMVC.Models.Pizza
 
 @{
-    ViewBag.Title = "Detalle";
+    ViewBag.Title = "Details";
 }
 
-<h2>Detalle</h2>
+<h2>Details</h2>
 
 <div>
     <h4>Pizza</h4>
@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Regresar a la lista", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PizzaID }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

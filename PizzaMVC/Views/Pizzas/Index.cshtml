@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<PizzaMVC.Models.Pizza>
 
 @{
-    ViewBag.Title = "Pizzas";
+    ViewBag.Title = "Index";
 }
 
-<h2>Pizzas</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -38,12 +38,12 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.ActionLink("Ver Receta","VerReceta", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.Receta)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.PizzaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PizzaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PizzaID })
         </td>
     </tr>
 }

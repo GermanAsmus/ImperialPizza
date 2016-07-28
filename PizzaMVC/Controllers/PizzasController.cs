@@ -46,7 +46,7 @@ namespace PizzaMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nombre,Descripcion,Precio")] Pizza pizza)
+        public ActionResult Create([Bind(Include = "PizzaID,Nombre,Descripcion,Precio,Receta")] Pizza pizza)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace PizzaMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nombre,Descripcion,Precio")] Pizza pizza)
+        public ActionResult Edit([Bind(Include = "PizzaID,Nombre,Descripcion,Precio,Receta")] Pizza pizza)
         {
             if (ModelState.IsValid)
             {
