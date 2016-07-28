@@ -1,31 +1,109 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "SUPER PIZZA";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<body>
+    <div class="col">
+        <form class="fixedPosition right-sidebar jumbotron">
+            <fieldset>
+                <legend class="text-center">Haz tu pedido</legend>
+                <div>
+                    <button href="~/" class="boton-sm"><span>CONCEPCION DEL URUGUAY</span></button> <br />
+                    <button href="~/" class="boton-sm"><span>COLON</span> </button> <br />
+                    <button href="~/" class="boton-sm"><span>SAN JOSE</span></button> <br />
+                </div> <br />
+                <legend class="text-center">Encontranos en</legend>
+                <div class="col">
+                    <input href="~/" type="image" src="~/Content/Images/facebook_48.png" alt="Submit" width="48" height="48" />
+                    <input href="~/" type="image" src="~/Content/Images/twitter_48.png" alt="Submit" width="48" height="48" />
+                    <input href="~/" type="image" src="~/Content/Images/instagram_48.png" alt="Submit" width="48" height="48" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="left-side-body">
+        <div>
+            <div id="slideShowImages">
+                <img src="~/Content/Images/1.png" alt="Slide 1" />
+                <img src="~/Content/Images/2.png" alt="Slide 2" />
+                <img src="~/Content/Images/pizza-2.jpg" alt="Slide 3" />
+            </div>
+            <script src="~/Scripts/mySlides.js"></script>
+        </div>
+        <br />
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="left-side-body left-side-content">
+            <span>
+                <h2>DESTACADAS</h2>
+                <ul class="list-inline">
+                    <li class="col-sm-3 list-group-item">
+                        <h3 class="text-center list-group-item-heading">Especial</h3>
+                        <center class="well">
+                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
+                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
+                        </center>
+                    </li>
+                    <li class="col-sm-3 list-group-item">
+                        <h3 class="text-center list-group-item-heading">Especial</h3>
+                        <center class="well">
+                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
+                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
+                        </center>
+                    </li>
+                    <li class="col-sm-3 list-group-item">
+                        <h3 class="text-center list-group-item-heading">Especial</h3>
+                        <center class="well">
+                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
+                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
+                        </center>
+                    </li>
+                    <li class="col-sm-3 list-group-item">
+                        <h3 class="text-center list-group-item-heading">Especial</h3>
+                        <center class="well">
+                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
+                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
+                        </center>
+                    </li>
+                </ul>
+            </span>
+            <br />
+
+            <span>
+                <h2>COMENTARIOS</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <center class="well">
+                            <p>
+                                Enviado <b>@DateTime.Now.AddDays(-4).ToShortDateString();</b>
+                                <i>
+                                    "Muy buena la pizza que encargamos anoche"
+                                </i>
+                            </p>
+                        </center>
+                    </li>
+                    <li class="list-group-item">
+                        <center class="well">
+                            <p>
+                                Enviado <b>@DateTime.Now.AddDays(-2).ToShortDateString();</b>
+                                <i>
+                                    "Nos encantaron las empanadas fritas que pedimos con la flia. Todo muy rico."
+                                </i>
+                            </p>
+                        </center>
+                    </li>
+                    <li class="list-group-item">
+                        <center class="well">
+                            <p>
+                                Enviado <b>@DateTime.Now.ToShortDateString();</b>
+                                <i>
+                                    "Paso a decir que nos encantaron las pizzas que comimos ayer.
+                                    -Juan Manuel."
+                                </i>
+                            </p>
+                        </center>
+                    </li>
+                </ul>
+            </span>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</body>
