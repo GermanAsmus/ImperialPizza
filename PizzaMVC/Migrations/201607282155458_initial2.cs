@@ -3,16 +3,14 @@ namespace PizzaMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _in : DbMigration
+    public partial class initial2 : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.Productoes", "Receta");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Productoes", "Receta", c => c.String(nullable: false, maxLength: 800));
         }
     }
 }

@@ -24,8 +24,12 @@ namespace PizzaMVC.Controllers
             var listaLocalidades = db.Localidads.ToList();
             listaLocalidades = listaLocalidades.OrderBy(l => l.Nombre).ToList();
 
-            ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
+            var listaProductos = db.Productoes.ToList();
+            listaProductos = listaProductos.OrderBy(p => p.Nombre).ToList();
 
+            ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
+            ViewBag.ProductoID = new SelectList(listaProductos, "ProductoID", "Nombre");
+            ViewBag.Productos = db.Productoes.ToList();
             return View(pedidoView);
         }
 
@@ -164,7 +168,7 @@ namespace PizzaMVC.Controllers
             listaLocalidades = listaLocalidades.OrderBy(l => l.Nombre).ToList();
 
             ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
-
+            
             return View("NuevoPedido", pedidoView);
         }
 

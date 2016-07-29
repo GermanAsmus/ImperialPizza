@@ -1,14 +1,16 @@
 ﻿@model PizzaMVC.ViewModels.PedidoView
 
+@using PizzaMVC.Models
 @{
     ViewBag.Title = "Nuevo Pedido";
+    List<Producto> listaProductos = ViewBag.Productos;
 }
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal well">
+    <div class="form-horizontal well" style="margin-top:10px">
         <h2>Nuevo Pedido</h2>
         <h4>Cliente</h4>
         <hr />
@@ -37,64 +39,73 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                @Html.ActionLink("Agregar Producto", "AgregarProducto", new { }, new { @class = "btn btn-primary" })
-            </div>
-        </div>
+
 
         <h2>Detalle Pedido</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductoPedido.Precio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductoPedido.Cantidad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductoPedido.Valor)
-                </th>
-                <th></th>
-            </tr>
-
-            @for (int i = 0; i < Model.Productos.Count; i++)
-            {
+        <table class="table" id="myTable">
+            @*<tbody>*@
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.Productos[i].Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.Productos[i].Precio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.Productos[i].Cantidad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.Productos[i].Valor)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Edit", new { id = Model.Productos[i].ProductoID }) |
-                        @Html.ActionLink("Eliminar", "Delete", new { id = Model.Productos[i].ProductoID })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductoPedido.Cantidad)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Precio Unitario")
+                    </th>
                 </tr>
-            }
+            <tr>
+                <td>
+                    @Html.DisplayName("Producto")
+                </td>
+                <td>
+                    @Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+                <td>
+                    @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </tr>
+                @*@foreach (var producto in Model.Productos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DropDownList("ProductoID", null, htmlAttributes: new { @class = "form-control" })
+                        </td>
+                        <td>
+                            @Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+                        <td>
+                            @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot class="table-bordered">
+                <tr>
+                    <th>
+                       
+                        <input type="button" onclick="myFunction()" class="btn btn-primary" id="btnAdd" value="Add New Item" />
+                        @Html.ActionLink("Agregar Producto", "AgregarProducto", new { }, new { @class = "btn btn-primary" })
+                    </th>
+                </tr>
+            </tfoot>*@
         </table>
-
+        <script src="~/Scripts/agregarNuevoProducto.js"></script>
+        <button onclick=" return myFunction()">Try it</button>
+       
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Confirmar" id="NuevoPedido" class="btn btn-success" />
             </div>
         </div>
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

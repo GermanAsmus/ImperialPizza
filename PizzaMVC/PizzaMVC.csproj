@@ -176,17 +176,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607281629326_Initial.cs" />
-    <Compile Include="Migrations\201607281629326_Initial.Designer.cs">
-      <DependentUpon>201607281629326_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201607282154573_initial.cs" />
+    <Compile Include="Migrations\201607282154573_initial.Designer.cs">
+      <DependentUpon>201607282154573_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607281633270_i.cs" />
-    <Compile Include="Migrations\201607281633270_i.Designer.cs">
-      <DependentUpon>201607281633270_i.cs</DependentUpon>
+    <Compile Include="Migrations\201607282155458_initial2.cs" />
+    <Compile Include="Migrations\201607282155458_initial2.Designer.cs">
+      <DependentUpon>201607282155458_initial2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607281637173_in.cs" />
-    <Compile Include="Migrations\201607281637173_in.Designer.cs">
-      <DependentUpon>201607281637173_in.cs</DependentUpon>
+    <Compile Include="Migrations\201607282202464_initial21.cs" />
+    <Compile Include="Migrations\201607282202464_initial21.Designer.cs">
+      <DependentUpon>201607282202464_initial21.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Localidad.cs" />
@@ -224,6 +224,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\agregarNuevoProducto.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -298,14 +299,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607281629326_Initial.resx">
-      <DependentUpon>201607281629326_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607282154573_initial.resx">
+      <DependentUpon>201607282154573_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607281633270_i.resx">
-      <DependentUpon>201607281633270_i.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607282155458_initial2.resx">
+      <DependentUpon>201607282155458_initial2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607281637173_in.resx">
-      <DependentUpon>201607281637173_in.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607282202464_initial21.resx">
+      <DependentUpon>201607282202464_initial21.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

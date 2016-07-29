@@ -3,35 +3,10 @@ namespace PizzaMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class i : DbMigration
+    public partial class initial21 : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Localidads",
-                c => new
-                    {
-                        LocalidadID = c.Int(nullable: false, identity: true),
-                        Nombre = c.String(),
-                    })
-                .PrimaryKey(t => t.LocalidadID);
-            
-            CreateTable(
-                "dbo.Pedidoes",
-                c => new
-                    {
-                        PedidoID = c.Int(nullable: false, identity: true),
-                        Fecha = c.DateTime(nullable: false),
-                        Hora = c.DateTime(nullable: false),
-                        Cliente = c.String(),
-                        Direccion = c.String(),
-                        EstadoPedido = c.Int(nullable: false),
-                        LocalidadID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.PedidoID)
-                .ForeignKey("dbo.Localidads", t => t.LocalidadID, cascadeDelete: true)
-                .Index(t => t.LocalidadID);
-            
             CreateTable(
                 "dbo.DetallePedidoes",
                 c => new
@@ -50,6 +25,31 @@ namespace PizzaMVC.Migrations
                 .Index(t => t.ProductoID);
             
             CreateTable(
+                "dbo.Pedidoes",
+                c => new
+                    {
+                        PedidoID = c.Int(nullable: false, identity: true),
+                        Fecha = c.DateTime(nullable: false),
+                        Hora = c.DateTime(nullable: false),
+                        Cliente = c.String(),
+                        Direccion = c.String(),
+                        EstadoPedido = c.Int(nullable: false),
+                        LocalidadID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PedidoID)
+                .ForeignKey("dbo.Localidads", t => t.LocalidadID, cascadeDelete: true)
+                .Index(t => t.LocalidadID);
+            
+            CreateTable(
+                "dbo.Localidads",
+                c => new
+                    {
+                        LocalidadID = c.Int(nullable: false, identity: true),
+                        Nombre = c.String(),
+                    })
+                .PrimaryKey(t => t.LocalidadID);
+            
+            CreateTable(
                 "dbo.Productoes",
                 c => new
                     {
@@ -57,7 +57,6 @@ namespace PizzaMVC.Migrations
                         Nombre = c.String(nullable: false, maxLength: 80),
                         Descripcion = c.String(nullable: false, maxLength: 200),
                         Precio = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Receta = c.String(nullable: false, maxLength: 800),
                         Cantidad = c.Single(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
@@ -92,22 +91,22 @@ namespace PizzaMVC.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Pedidoes", "LocalidadID", "dbo.Localidads");
             DropForeignKey("dbo.DetallePedidoes", "ProductoID", "dbo.Productoes");
             DropForeignKey("dbo.DetalleEventoes", "ProductoID", "dbo.Productoes");
             DropForeignKey("dbo.DetalleEventoes", "EventID", "dbo.Events");
+            DropForeignKey("dbo.Pedidoes", "LocalidadID", "dbo.Localidads");
             DropForeignKey("dbo.DetallePedidoes", "PedidoID", "dbo.Pedidoes");
             DropIndex("dbo.DetalleEventoes", new[] { "EventID" });
             DropIndex("dbo.DetalleEventoes", new[] { "ProductoID" });
+            DropIndex("dbo.Pedidoes", new[] { "LocalidadID" });
             DropIndex("dbo.DetallePedidoes", new[] { "ProductoID" });
             DropIndex("dbo.DetallePedidoes", new[] { "PedidoID" });
-            DropIndex("dbo.Pedidoes", new[] { "LocalidadID" });
             DropTable("dbo.Events");
             DropTable("dbo.DetalleEventoes");
             DropTable("dbo.Productoes");
-            DropTable("dbo.DetallePedidoes");
-            DropTable("dbo.Pedidoes");
             DropTable("dbo.Localidads");
+            DropTable("dbo.Pedidoes");
+            DropTable("dbo.DetallePedidoes");
         }
     }
 }
