@@ -3,29 +3,11 @@
 }
 
 <body>
-    <div class="col">
-        <form class="fixedPosition right-sidebar well">
-            <fieldset>
-                <legend class="text-center">Haz tu pedido en</legend>
-                <div>
-                        <ul class="list-group">
-                            <li class="text-center">CONCEPCION DEL URUGUAY</li>
-                            <li class="text-center">COLON</li>
-                            <li class="text-center">SAN JOSE</li>
-                        </ul>
-                    <span>@Html.ActionLink("ENCARGAR AHORA!", "NuevoPedido", "Pedidoes", new { }, new { @class = "boton-sm" })</span> <br />
-                </div> <br />
-                <legend class="text-center">Encontranos en</legend>
-                <div class="col">
-                    <input href="~/" type="image" src="~/Content/Images/facebook_48.png" alt="Submit" width="48" height="48" />
-                    <input href="~/" type="image" src="~/Content/Images/twitter_48.png" alt="Submit" width="48" height="48" />
-                    <input href="~/" type="image" src="~/Content/Images/instagram_48.png" alt="Submit" width="48" height="48" />
-                </div>
-            </fieldset>
-        </form>
+    <div>
+        @Html.Partial("_RightSidebar")
     </div>
     <div class="left-side-body">
-        <div>
+        <div class="panel-group">
             <div id="slideShowImages">
                 <img src="~/Content/Images/1.png" alt="Slide 1" />
                 <img src="~/Content/Images/2.png" alt="Slide 2" />
@@ -36,7 +18,7 @@
         <br />
 
         <div class="left-side-body left-side-content">
-            <span>
+            <div>
                 <h2>DESTACADAS</h2>
                 <ul class="list-inline">
                     <li class="col-sm-3 list-group-item">
@@ -68,7 +50,7 @@
                         </center>
                     </li>
                 </ul>
-            </span>
+            </div>
             <br />
 
             <span>

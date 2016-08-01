@@ -42,10 +42,6 @@ textarea {
         position: absolute;
     }
 
-.fixedPosition {
-    position: fixed;
-}
-
 .boton-comprar {
     display: inline-block;
     border-radius: 4px;
@@ -61,11 +57,12 @@ textarea {
 }
 
 .boton-sm {
-    display: inline-block;
+    /*display: inline-block;*/
+    align-self:center;
     border-radius: 4px;
-    background-color: #f4511e;
+    /*background-color: #f4511e;*/
     border: none;
-    color: #FFFFFF;
+    color: black;
     text-align: center;
     font-size: 12px;
     padding: 20px;
@@ -124,8 +121,11 @@ textarea {
 
 .right-sidebar {
     right: 50px;
-    float: right;
-    height: 100%;
+    /*float: right;*/
+    position:fixed;
+    width:320px;
+    top:100px;
+    bottom:25px;
 }
 
     .right-sidebar ul {
