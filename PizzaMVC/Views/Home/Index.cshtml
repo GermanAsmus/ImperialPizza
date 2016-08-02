@@ -1,94 +1,74 @@
-﻿@{
+﻿@using PizzaMVC.ViewModels
+@using PizzaMVC.Models
+@{
     ViewBag.Title = "SUPER PIZZA";
+    var pedidos = new List<PedidoViewModel>(){
+        new PedidoViewModel() { ProductoPedido = new ProductoPedido()
+        {
+            Nombre = "Hawaiana",
+            Descripcion = "La pizza hawaiana es una pizza que contiene una base de queso fundido y tomate que se aliñan con jamón y piña."
+        }},
+        new PedidoViewModel() { ProductoPedido = new ProductoPedido()
+        {
+            Nombre = "Napolitana",
+            Descripcion="La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda."
+        }},
+        new PedidoViewModel() { ProductoPedido = new ProductoPedido()
+        {
+            Nombre = "Especial",
+            Descripcion="Esta pizza es especial ya que no lleva la típica salsa de tomate sino que por encima lleva láminas de varias verduras como zucchini, berenjena, pimientos y tomate."
+        } },
+        new PedidoViewModel() { ProductoPedido = new ProductoPedido()
+        {
+            Nombre = "Con Huevo",
+            Descripcion="La pizza de huevo duro, es una pizza roja con mozzarella y huevo duro rallado en la superficie."
+        } }
+    };
 }
 
 <body>
     <div>
         @Html.Partial("_RightSidebar")
     </div>
+
     <div class="left-side-body">
-        <div class="panel-group">
-            <div id="slideShowImages">
-                <img src="~/Content/Images/1.png" alt="Slide 1" />
-                <img src="~/Content/Images/2.png" alt="Slide 2" />
-                <img src="~/Content/Images/pizza-2.jpg" alt="Slide 3" />
-            </div>
-            <script src="~/Scripts/mySlides.js"></script>
-        </div>
+        @Html.Partial("_SlideShow")
         <br />
 
-        <div class="left-side-body left-side-content">
+        <div class="left-side-content">
             <div>
                 <h2>DESTACADAS</h2>
                 <ul class="list-inline">
                     <li class="col-sm-3 list-group-item">
-                        <h3 class="text-center list-group-item-heading">Especial</h3>
-                        <center class="well">
-                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
-                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
-                        </center>
+                        @Html.Partial("_Destacada", pedidos[0])
                     </li>
                     <li class="col-sm-3 list-group-item">
-                        <h3 class="text-center list-group-item-heading">Especial</h3>
-                        <center class="well">
-                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
-                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
-                        </center>
+                        @Html.Partial("_Destacada", pedidos[1])
                     </li>
                     <li class="col-sm-3 list-group-item">
-                        <h3 class="text-center list-group-item-heading">Especial</h3>
-                        <center class="well">
-                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
-                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
-                        </center>
+                        @Html.Partial("_Destacada", pedidos[2])
                     </li>
                     <li class="col-sm-3 list-group-item">
-                        <h3 class="text-center list-group-item-heading">Especial</h3>
-                        <center class="well">
-                            <img class="imagen1" src="~/Content/Images/pizza-1.jpg" height="128" width="128" /> <br />
-                            <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
-                        </center>
+                        @Html.Partial("_Destacada", pedidos[3])
                     </li>
                 </ul>
             </div>
-            <br />
+        </div>
+        <br />
 
-            <span>
-                <h2>COMENTARIOS</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <center class="well">
-                            <p>
-                                Enviado <b>@DateTime.Now.AddDays(-4).ToShortDateString();</b>
-                                <i>
-                                    "Muy buena la pizza que encargamos anoche"
-                                </i>
-                            </p>
-                        </center>
-                    </li>
-                    <li class="list-group-item">
-                        <center class="well">
-                            <p>
-                                Enviado <b>@DateTime.Now.AddDays(-2).ToShortDateString();</b>
-                                <i>
-                                    "Nos encantaron las empanadas fritas que pedimos con la flia. Todo muy rico."
-                                </i>
-                            </p>
-                        </center>
-                    </li>
-                    <li class="list-group-item">
-                        <center class="well">
-                            <p>
-                                Enviado <b>@DateTime.Now.ToShortDateString();</b>
-                                <i>
-                                    "Paso a decir que nos encantaron las pizzas que comimos ayer.
-                                    -Juan Manuel."
-                                </i>
-                            </p>
-                        </center>
-                    </li>
-                </ul>
-            </span>
+        <div class="left-side-content">
+            <h2>COMENTARIOS</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    @Html.Partial("_Comentario")
+                </li>
+                <li class="list-group-item">
+                    @Html.Partial("_Comentario")
+                </li>
+                <li class="list-group-item">
+                    @Html.Partial("_Comentario")
+                </li>
+            </ul>
         </div>
     </div>
 </body>

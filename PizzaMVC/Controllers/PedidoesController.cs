@@ -3,6 +3,7 @@ using PizzaMVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,11 +13,33 @@ namespace PizzaMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //GET: Index
+        public ActionResult Index()
+        {
+            return View(db.Pedidoes.ToList());
+        }
+
+        // GET: Productoes/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Pedido pedido = db.Pedidoes.Find(id);
+            if (pedido == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pedido);
+        }
+
+
         // GET: Pedidoes/NuevoPedido
         public ActionResult NuevoPedido()
         {
-            var pedidoView = new PedidoView();
-            
+            var pedidoView = new PedidoViewModel();
+
             pedidoView.Productos = new List<ProductoPedido>();
 
             Session["pedidoView"] = pedidoView;
@@ -35,9 +58,9 @@ namespace PizzaMVC.Controllers
 
         // POST: Pedidoes/NuevoPedido
         [HttpPost]
-        public ActionResult NuevoPedido(PedidoView pedidoView)
+        public ActionResult NuevoPedido(PedidoViewModel pedidoView)
         {
-            pedidoView = Session["pedidoView"] as PedidoView;
+            pedidoView = Session["pedidoView"] as PedidoViewModel;
 
             var localidadID = int.Parse(Request["LocalidadID"]);
 
@@ -119,7 +142,7 @@ namespace PizzaMVC.Controllers
         [HttpPost]
         public ActionResult AgregarProducto(ProductoPedido productoPedido)
         {
-            var pedidoView = Session["pedidoView"] as PedidoView;
+            var pedidoView = Session["pedidoView"] as PedidoViewModel;
 
             var productoID = int.Parse(Request["ProductoID"]);
 
@@ -168,7 +191,7 @@ namespace PizzaMVC.Controllers
             listaLocalidades = listaLocalidades.OrderBy(l => l.Nombre).ToList();
 
             ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
-            
+
             return View("NuevoPedido", pedidoView);
         }
 

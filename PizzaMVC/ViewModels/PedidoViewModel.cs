@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PizzaMVC.ViewModels
 {
-    public class PedidoView
+    public class PedidoViewModel
     {
         [Display(Name ="Nombre y Apellido")]
         public string Cliente { get; set; }

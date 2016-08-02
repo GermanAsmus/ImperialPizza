@@ -49,6 +49,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MoreLinq, Version=1.4.18916.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -58,6 +62,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -202,7 +207,8 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\PedidoView.cs" />
+    <Compile Include="ViewModels\PedidosDestacadosViewModel.cs" />
+    <Compile Include="ViewModels\PedidoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -287,6 +293,9 @@
     <Content Include="Views\Pedidoes\NuevoPedido.cshtml" />
     <Content Include="Views\Pedidoes\AgregarProducto.cshtml" />
     <Content Include="Views\Home\_RightSidebar.cshtml" />
+    <Content Include="Views\Home\_SlideShow.cshtml" />
+    <Content Include="Views\Home\_Destacada.cshtml" />
+    <Content Include="Views\Home\_Comentario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

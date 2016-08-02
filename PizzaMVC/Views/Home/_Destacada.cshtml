@@ -1,0 +1,15 @@
+﻿@model PizzaMVC.ViewModels.PedidoViewModel
+
+@{ 
+
+}
+
+<h3 class="text-center list-group-item-heading">@Model.ProductoPedido.Nombre</h3>
+<center class="well">
+    <img class="imagen1" src="~/Content/Images/pizza-1.jpg" alt="image" height="128" width="128" /> <br />
+    <h3>@nameof(Model.ProductoPedido.Descripcion)</h3>
+    <p>
+        @Model.ProductoPedido.Descripcion
+    </p>
+    <a href="~/" class="boton-comprar"><span>¡ENCARGAR!</span></a>
+</center>
