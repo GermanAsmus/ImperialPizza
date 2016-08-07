@@ -13,5 +13,10 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult PedidoMateriaPrima()
+        {
+            return View();
+        }
     }
 }
