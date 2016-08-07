@@ -24,14 +24,18 @@
                     <li>@Html.ActionLink("Eventos", "Index", "Events")</li>
                     <li>@Html.ActionLink("Productos", "Index", "")</li>
                 </ul>
-                
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div class="calendario">
+            @Html.Partial("_Calendario")
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Imperial Pizza by F5 "i.t solutions"</p>
         </footer>
