@@ -43,7 +43,6 @@
 
         <h2>Detalle Pedido</h2>
         <table class="table" id="myTable">
-            @*<tbody>*@
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
@@ -55,7 +54,8 @@
                         @Html.DisplayName("Precio Unitario")
                     </th>
                 </tr>
-            <tr>
+            @Html.Partial("_DetallePedido")
+            @*<tr>
                 <td>
                     @Html.DisplayName("Producto")
                 </td>
@@ -65,34 +65,10 @@
                 <td>
                     @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
                 </td>
-            </tr>
-                @*@foreach (var producto in Model.Productos)
-                {
-                    <tr>
-                        <td>
-                            @Html.DropDownList("ProductoID", null, htmlAttributes: new { @class = "form-control" })
-                        </td>
-                        <td>
-                            @Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                        <td>
-                            @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                    </tr>
-                }
-            </tbody>
-            <tfoot class="table-bordered">
-                <tr>
-                    <th>
-                       
-                        <input type="button" onclick="myFunction()" class="btn btn-primary" id="btnAdd" value="Add New Item" />
-                        @Html.ActionLink("Agregar Producto", "AgregarProducto", new { }, new { @class = "btn btn-primary" })
-                    </th>
-                </tr>
-            </tfoot>*@
+            </tr>*@
         </table>
         <script src="~/Scripts/agregarNuevoProducto.js"></script>
-        <button onclick=" return myFunction()">Try it</button>
+        <button onclick="return myFunction()">Try it</button>
        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -1,0 +1,22 @@
+﻿@model PizzaMVC.ViewModels.PedidoViewModel
+
+@*<tr>
+        <td>
+            @Html.DisplayName("Producto")
+        </td>
+        <td>
+            @Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+        <td>
+            @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>*@
+
+<tr>
+
+    <td>
+        @Html.DropDownList("ProductoID", null, htmlAttributes: new { @class = "form-control" })
+    </td>
+    <td>@Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })</td>
+    <td>@Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } }) </td>
+</tr>

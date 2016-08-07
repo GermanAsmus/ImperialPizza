@@ -6,22 +6,22 @@
         new PedidoViewModel() { ProductoPedido = new ProductoPedido()
         {
             Nombre = "Hawaiana",
-            Descripcion = "La pizza hawaiana es una pizza que contiene una base de queso fundido y tomate que se aliñan con jamón y piña."
+            //Descripcion = "La pizza hawaiana es una pizza que contiene una base de queso fundido y tomate que se aliñan con jamón y piña."
         }},
         new PedidoViewModel() { ProductoPedido = new ProductoPedido()
         {
             Nombre = "Napolitana",
-            Descripcion="La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda."
+            //Descripcion="La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda."
         }},
         new PedidoViewModel() { ProductoPedido = new ProductoPedido()
         {
             Nombre = "Especial",
-            Descripcion="Esta pizza es especial ya que no lleva la típica salsa de tomate sino que por encima lleva láminas de varias verduras como zucchini, berenjena, pimientos y tomate."
+            //Descripcion="Esta pizza es especial ya que no lleva la típica salsa de tomate sino que por encima lleva láminas de varias verduras como zucchini, berenjena, pimientos y tomate."
         } },
         new PedidoViewModel() { ProductoPedido = new ProductoPedido()
         {
             Nombre = "Con Huevo",
-            Descripcion="La pizza de huevo duro, es una pizza roja con mozzarella y huevo duro rallado en la superficie."
+            //Descripcion="La pizza de huevo duro, es una pizza roja con mozzarella y huevo duro rallado en la superficie."
         } }
     };
 }
@@ -40,7 +40,7 @@
                 <h2>DESTACADAS</h2>
                 <ul class="list-inline">
                     <li class="col-sm-3 list-group-item">
-                        @Html.Partial("_Destacada", pedidos[0])
+                        @Html.Partial("_Destacada",pedidos[0])
                     </li>
                     <li class="col-sm-3 list-group-item">
                         @Html.Partial("_Destacada", pedidos[1])

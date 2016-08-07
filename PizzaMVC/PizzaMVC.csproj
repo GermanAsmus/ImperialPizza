@@ -296,6 +296,7 @@
     <Content Include="Views\Home\_SlideShow.cshtml" />
     <Content Include="Views\Home\_Destacada.cshtml" />
     <Content Include="Views\Home\_Comentario.cshtml" />
+    <Content Include="Views\Pedidoes\_DetallePedido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
