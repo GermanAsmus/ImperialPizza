@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Stock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal well" style="margin-top:10px">
+        <h2>Stock</h2>        
+        <hr />
+        <h4>Stock Actual - Concepción del Uruguay</h4>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad Actual</th>
+                    <th>Cantidad Mínima</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Queso Muzzarella x 1KG</td>
+                    <td>20 <span class="glyphicon glyphicon-warning-sign"></span></td>
+                    <td>30</td>
+                    <td><a href="#">Modificar</a> | <a href="#">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Huevo</td>
+                    <td>36</td>
+                    <td>12</td>
+                    <td><a href="#">Modificar</a> | <a href="#">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Morron</td>
+                    <td>36</td>
+                    <td>20</td>
+                    <td><a href="#">Modificar</a> | <a href="#">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Aceituna</td>
+                    <td>120</td>
+                    <td>50</td>
+                    <td><a href="#">Modificar</a> | <a href="#">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Tomate</td>
+                    <td>70</td>
+                    <td>30</td>
+                    <td><a href="#">Modificar</a> | <a href="#">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-primary">Agregar Producto</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success">Guardar</button>
+        <br />
+        <br />
+        @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

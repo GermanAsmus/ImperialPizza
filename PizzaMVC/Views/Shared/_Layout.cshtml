@@ -23,20 +23,30 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Eventos", "Index", "Events")</li>
                     <li>@Html.ActionLink("Productos", "Index", "")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.Identity.Name == "cdelu@admin.com" || User.Identity.Name == "colon@admin.com" || User.Identity.Name == "sanjose@admin.com")
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Administración
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="list-group-item"><a href="#">BlaBla</a></li>
+                                </ul>
+                            </li>
+                        }
+                    }
                 </ul>
-
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <div class="calendario">
-            @Html.Partial("_Calendario")
-        </div>
-        <footer>
+        <footer class="well">
             <p>&copy; @DateTime.Now.Year - Imperial Pizza by F5 "i.t solutions"</p>
         </footer>
     </div>
