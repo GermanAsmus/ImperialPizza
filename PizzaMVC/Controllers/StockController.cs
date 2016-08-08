@@ -18,5 +18,15 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult RealizarPedido()
+        {
+            return View();
+        }
+
+        public ActionResult VerHistorialPedidos()
+        {
+            return View();
+        }
     }
 }

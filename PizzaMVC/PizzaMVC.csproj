@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PedidoesController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
+    <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -362,7 +363,9 @@
     <Content Include="Views\Pedidoes\_DetallePedido.cshtml" />
     <Content Include="Views\Stock\Index.cshtml" />
     <Content Include="Views\Stock\PedidoMateriaPrima.cshtml" />
-	<Content Include="Views\Home\MisPedidos.cshtml" />
+    <Content Include="Views\Home\MisPedidos.cshtml" />
+    <Content Include="Views\Stock\RealizarPedido.cshtml" />
+    <Content Include="Views\Stock\VerHistorialPedidos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
