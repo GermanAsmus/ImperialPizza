@@ -1,0 +1,35 @@
+﻿<link href="~/Content/myCalendarStyle.css" rel="stylesheet" type="text/css" />
+<div class="month">
+    <ul>
+        <li class="prev">&laquo;</li>
+        <li class="next">&raquo;</li>
+        <li style="text-align:center">
+            @{
+                var meses = new string[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+                Write(meses[DateTime.Now.Month - 1]);
+
+            }
+            <br>
+            <span style="font-size:18px">2016</span>
+        </li>
+    </ul>
+</div>
+
+<ul class="weekdays">
+    <li>Lunes</li>
+    <li>Martes</li>
+    <li>Miercoles</li>
+    <li>Jueves</li>
+    <li>Viernes</li>
+    <li>Sabado</li>
+    <li>Domingo</li>
+</ul>
+
+<ul class="days">
+    @for (int i = 1; i < DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+    {
+        <li>
+            <a href="#">@i</a>
+        </li>
+    }
+</ul>
