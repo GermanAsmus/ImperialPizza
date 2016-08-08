@@ -37,5 +37,15 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult VerPizza()
+        {
+            return View();
+        }
+
+        public ActionResult VerEmpanadas()
+        {
+            return View();
+        }
     }
 }
