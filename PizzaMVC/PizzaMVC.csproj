@@ -366,6 +366,7 @@
     <Content Include="Views\Home\MisPedidos.cshtml" />
     <Content Include="Views\Stock\RealizarPedido.cshtml" />
     <Content Include="Views\Stock\VerHistorialPedidos.cshtml" />
+    <Content Include="Views\Home\EspecialidadesCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,5 +32,10 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult EspecialidadesCliente()
+        {
+            return View();
+        }
     }
 }
