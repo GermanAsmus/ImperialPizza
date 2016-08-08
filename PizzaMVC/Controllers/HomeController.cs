@@ -27,5 +27,10 @@ namespace PizzaMVC.Controllers
 
             return View();
         }
+
+        public ActionResult MisPedidos()
+        {
+            return View();
+        }
     }
 }

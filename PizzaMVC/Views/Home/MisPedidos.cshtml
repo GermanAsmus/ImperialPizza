@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Mis Pedidos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal well" style="margin-top:10px">
+        <h2>Mis Pedidos</h2>
+        <hr />
+        <h4>Estado de pedidos realizados</h4>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Sucursal</th>
+                    <th>Detalle</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11/08/16</td>
+                    <td>Concepción del Uruguay</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td>Esperando aprobación... <button class="btn btn-danger">Anular</button></td>
+                </tr>
+                <tr>
+                    <td>08/08/16</td>
+                    <td>Concepción del Uruguay</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td>Entregado</td>
+                </tr>
+                <tr>
+                    <td>21/07/16</td>
+                    <td>Concepción del Uruguay</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td>Entregado</td>
+                </tr>                
+            </tbody>
+        </table>
+        <br />
+        <br />
+        @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
