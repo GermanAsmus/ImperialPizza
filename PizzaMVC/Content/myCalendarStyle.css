@@ -6,53 +6,53 @@
     box-sizing: border-box;
 }
 
-.month {
+.calendar-header {
     padding: 70px 25px;
     background: tomato;
 }
 
-    .month ul {
+    .calendar-header ul {
         margin: 0;
         padding: 0;
     }
 
-        .month ul li {
+        .calendar-header ul li {
             color: white;
             font-size: 20px;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
 
-    .month .prev {
+    .calendar-header .prev {
         float: left;
         padding-top: 10px;
     }
 
-    .month .next {
+    .calendar-header .next {
         float: right;
         padding-top: 10px;
     }
 
-.weekdays {
+.calendar-sub-header {
     margin: 0;
     padding: 10px 0;
     background-color: #ddd;
 }
 
-    .weekdays li {
+    .calendar-sub-header li {
         display: inline-block;
         width: 13.6%;
         color: #666;
         text-align: center;
     }
 
-.days {
+.calendar-body {
     padding: 10px 0;
     background: #eee;
     margin: 0;
 }
 
-    .days li {
+    .calendar-body li {
         list-style-type: none;
         display: inline-block;
         width: 13.6%;
@@ -62,7 +62,7 @@
         color: #777;
     }
 
-        .days li .active {
+        .calendar-body li .active {
             padding: 5px;
             background: #1abc9c;
             color: white !important;
@@ -70,23 +70,68 @@
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
-    .weekdays li, .days li {
+    .calendar-sub-header li, .calendar-body li {
         width: 13.1%;
     }
 }
 
 @media screen and (max-width: 420px) {
-    .weekdays li, .days li {
+    .calendar-sub-header li, .calendar-body li {
         width: 12.5%;
     }
 
-        .days li .active {
+        .calendar-body li .active {
             padding: 2px;
         }
 }
 
 @media screen and (max-width: 290px) {
-    .weekdays li, .days li {
+    .calendar-sub-header li, .calendar-body li {
         width: 12.2%;
     }
 }
+
+.event {
+    /*box-sizing: border-box;*/
+    background: tomato;
+}
+
+.event-header {
+    margin: 10px;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.event-sub-header {
+    margin: 0;
+    background-color: #ddd;
+}
+
+    .event-sub-header input {
+        display: inline-block;
+        margin: 3px;
+        text-align: center;
+    }
+
+.event-search {
+    float: right;
+    line-height: 25px;
+}
+
+.event-body {
+    background: #eee;
+    margin: 0;
+}
+
+    .event-body ul {
+        margin: 0;
+    }
+
+        .event-body ul li {
+            list-style-type: none;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #777;
+            letter-spacing:2px;
+        }
