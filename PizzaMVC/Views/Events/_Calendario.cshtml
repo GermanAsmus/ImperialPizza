@@ -1,0 +1,61 @@
+﻿<link href="~/Content/myCalendarStyle.css" rel="stylesheet" type="text/css" />
+<div class="row">
+    <div class="col-sm-8">
+        <div class="calendar-header">
+            <ul>
+                <li class="prev">&laquo;</li>
+                <li class="next">&raquo;</li>
+                <li style="text-align:center">
+                    @{
+                        var meses = new string[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+                        Write(meses[DateTime.Now.Month - 1]);
+
+                    }
+                    <br>
+                    <span style="font-size:18px">@DateTime.Now.Year</span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="calendar-sub-header">
+            <li>Lunes</li>
+            <li>Martes</li>
+            <li>Miercoles</li>
+            <li>Jueves</li>
+            <li>Viernes</li>
+            <li>Sabado</li>
+            <li>Domingo</li>
+        </ul>
+
+        <ul class="calendar-body">
+            @for (int i = 1; i < DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+            {
+                <li>
+                    <a href="#">@i</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-sm-4 panel event">
+        <h2 class="event-header">
+            Eventos
+        </h2>
+        <div class="event-sub-header">
+            <input type="button" class="btn btn-success" value="Nuevo">
+            @*<span class="glyphicon glyphicon-search pull-right">Buscar</span>*@
+            <input type="search" class="pull-right" value="Buscar" />
+
+        </div>
+        <div class="event-body">
+            <ul>
+                <li>
+                    Cumpleaños
+                    <a href="#">(Ver Pedido)</a>
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                    @DateTime.Now.AddDays(4).ToShortDateString()
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
