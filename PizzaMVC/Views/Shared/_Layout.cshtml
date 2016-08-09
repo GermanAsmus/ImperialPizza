@@ -21,6 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Especialidades", "Especialidades", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         if (User.Identity.Name == "cdelu@admin.com" || User.Identity.Name == "colon@admin.com" || User.Identity.Name == "sanjose@admin.com")
@@ -42,10 +43,6 @@
                         {
                             <li>@Html.ActionLink("Mis Pedidos", "MisPedidos", "Home")</li>
                         }
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Especialidades", "EspecialidadesCliente", "Home")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
