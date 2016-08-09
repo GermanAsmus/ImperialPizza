@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Pedido Ingredientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal well" style="margin-top:10px">
+        <h2>Pedido a Proveedor</h2>
+        <hr />
+        <h4>Generar Órdenes de Compra de ingresdientes</h4>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Detalle</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Concepción del Uruguay</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td><a href="#">Generar</a> | <a href="#">Modificar</a></td>
+                </tr>
+                <tr>
+                    <td>Colón</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td><a href="#">Generar</a> | <a href="#">Modificar</a></td>
+                </tr>
+                <tr>
+                    <td>San José</td>
+                    <td><a href="#">Ver Detalle</a></td>
+                    <td><a href="#">Generar</a> | <a href="#">Modificar</a></td>
+                </tr>
+                <tr>
+                    <td>@Html.ActionLink("Ver Historial", "VerHistorialPedidos", "Stock", null, new { @class = "btn btn-primary" } )</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

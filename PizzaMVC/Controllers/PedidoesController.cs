@@ -38,22 +38,30 @@ namespace PizzaMVC.Controllers
         // GET: Pedidoes/NuevoPedido
         public ActionResult NuevoPedido()
         {
-            var pedidoView = new PedidoViewModel();
+            if (User.Identity.IsAuthenticated)
+            {
+                var pedidoView = new PedidoViewModel();
 
-            pedidoView.Productos = new List<ProductoPedido>();
+                pedidoView.Productos = new List<ProductoPedido>();
 
-            Session["pedidoView"] = pedidoView;
+                Session["pedidoView"] = pedidoView;
 
-            var listaLocalidades = db.Localidads.ToList();
-            listaLocalidades = listaLocalidades.OrderBy(l => l.Nombre).ToList();
+                var listaLocalidades = db.Localidads.ToList();
+                listaLocalidades = listaLocalidades.OrderBy(l => l.Nombre).ToList();
 
-            var listaProductos = db.Productoes.ToList();
-            listaProductos = listaProductos.OrderBy(p => p.Nombre).ToList();
+                var listaProductos = db.Productoes.ToList();
+                listaProductos = listaProductos.OrderBy(p => p.Nombre).ToList();
 
-            ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
-            ViewBag.ProductoID = new SelectList(listaProductos, "ProductoID", "Nombre");
-            ViewBag.Productos = db.Productoes.ToList();
-            return View(pedidoView);
+                ViewBag.LocalidadID = new SelectList(listaLocalidades, "LocalidadID", "Nombre");
+                ViewBag.ProductoID = new SelectList(listaProductos, "ProductoID", "Nombre");
+                ViewBag.Productos = db.Productoes.ToList();
+                return View(pedidoView);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            
         }
 
         // POST: Pedidoes/NuevoPedido
