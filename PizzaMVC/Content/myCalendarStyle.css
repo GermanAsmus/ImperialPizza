@@ -7,21 +7,19 @@
 }
 
 .calendar-header {
-    padding: 70px 25px;
-    background: tomato;
+    margin: 0;
+    padding: 10px 0px;
+    background: white;
+    padding: 0;
+            text-align:center;
 }
 
-    .calendar-header ul {
-        margin: 0;
-        padding: 0;
+    .calendar-header li {
+        display:inline-block;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
-
-        .calendar-header ul li {
-            color: white;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
 
     .calendar-header .prev {
         float: left;
@@ -133,5 +131,5 @@
             margin-bottom: 5px;
             font-size: 12px;
             color: #777;
-            letter-spacing:2px;
+            letter-spacing: 2px;
         }

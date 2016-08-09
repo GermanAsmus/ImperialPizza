@@ -1,0 +1,37 @@
+﻿@{
+    var meses = new string[] { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" };
+    var dias = new string[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
+    var selectedMes = meses[0];
+}
+<ul class="calendar-header">
+    @foreach (var mes in meses)
+    {
+        <li>
+            <a href="#">
+                @mes
+            </a>
+        </li>
+    }
+</ul>
+
+<ul class="calendar-sub-header">
+    @foreach (var dia in dias)
+    {
+        <li>
+            @dia
+        </li>
+    }
+</ul>
+
+<ul class="calendar-body">
+
+    @for (int i = 1; i < DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+    {
+        <li>
+            <a href="#">
+                @i
+            </a>
+        </li>
+    }
+</ul>
+

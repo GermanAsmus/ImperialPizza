@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PizzaMVC.Models.Event>
+
+@{
+    ViewBag.Title = "Eventos";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/myCalendarStyle.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="form-horizontal well">
+        <h2>
+            Eventos
+        </h2>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.Partial("_Calendario")
+            </div>
+            <div class="col-sm-6">
+                <center>
+                    <p class="btn btn-info btn-lg" style="width:100%">
+                        @Html.ActionLink("Crear Nuevo Evento", "Create")
+                    </p>
+                </center>
+
+                <br />
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

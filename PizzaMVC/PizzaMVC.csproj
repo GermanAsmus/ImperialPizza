@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Events1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -372,6 +373,12 @@
     <Content Include="Views\Home\Especialidades.cshtml" />
     <Content Include="Views\Home\VerPizza.cshtml" />
     <Content Include="Views\Home\VerEmpanadas.cshtml" />
+    <Content Include="Views\Events1\Create.cshtml" />
+    <Content Include="Views\Events1\Delete.cshtml" />
+    <Content Include="Views\Events1\Details.cshtml" />
+    <Content Include="Views\Events1\Edit.cshtml" />
+    <Content Include="Views\Events1\Index.cshtml" />
+    <Content Include="Views\Events1\_Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
