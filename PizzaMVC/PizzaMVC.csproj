@@ -176,12 +176,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PedidoesController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
+    <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,12 +217,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\1.png" />
     <Content Include="Content\Images\2.png" />
     <Content Include="Content\Images\b23.png" />
     <Content Include="Content\Images\empanadas-1.jpg" />
+    <Content Include="Content\Images\empanadas-2.jpg" />
     <Content Include="Content\Images\facebook_48.png" />
     <Content Include="Content\Images\instagram_48.png" />
     <Content Include="Content\Images\pizza-1.jpg" />
@@ -230,6 +232,7 @@
     <Content Include="Content\Images\pizza-3.jpg" />
     <Content Include="Content\Images\pizza-4.jpg" />
     <Content Include="Content\Images\pizza-5.jpg" />
+    <Content Include="Content\Images\pizza-6.jpg" />
     <Content Include="Content\Images\pizza-logo.png" />
     <Content Include="Content\Images\twitter_48.png" />
     <Content Include="Content\myCalendarStyle.css" />
@@ -361,12 +364,14 @@
     <Content Include="Views\Home\_Destacada.cshtml" />
     <Content Include="Views\Home\_Comentario.cshtml" />
     <Content Include="Views\Pedidoes\_DetallePedido.cshtml" />
-    <Content Include="Views\Events\_Calendario.cshtml" />
-    <Content Include="Views\Events\Create.cshtml" />
-    <Content Include="Views\Events\Delete.cshtml" />
-    <Content Include="Views\Events\Details.cshtml" />
-    <Content Include="Views\Events\Edit.cshtml" />
-    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Stock\Index.cshtml" />
+    <Content Include="Views\Stock\PedidoMateriaPrima.cshtml" />
+    <Content Include="Views\Home\MisPedidos.cshtml" />
+    <Content Include="Views\Stock\RealizarPedido.cshtml" />
+    <Content Include="Views\Stock\VerHistorialPedidos.cshtml" />
+    <Content Include="Views\Home\Especialidades.cshtml" />
+    <Content Include="Views\Home\VerPizza.cshtml" />
+    <Content Include="Views\Home\VerEmpanadas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

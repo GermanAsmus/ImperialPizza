@@ -19,11 +19,9 @@
                     </li>
                 </ul>
             </div>
-            <button class="btn boton-sm">
-                <span class="glyphicon glyphicon-hand-right">
-                    @Html.ActionLink("ENCARGAR AHORA!", "NuevoPedido", "Pedidoes", new { })
-                </span>
-            </button>
+            <span class="glyphicon glyphicon-hand-right">
+                <input type="button" onclick="location.href='/Pedidoes/NuevoPedido';" value="ENCARGAR AHORA!" class="btn boton-sm" />
+            </span>
             <br />
             <h3>Encontranos en</h3>
             <div class="form-group">
