@@ -203,6 +203,11 @@ namespace PizzaMVC.Controllers
             return View("NuevoPedido", pedidoView);
         }
 
+        public ActionResult ListadoPedidos()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

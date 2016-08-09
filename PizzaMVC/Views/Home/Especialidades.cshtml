@@ -58,14 +58,25 @@
                     else
                     {
                         <td>@Html.ActionLink("Ver Detalles", "VerEmpanadas", "Home")</td>
-                    }                    
+                    }
                 </tr>
-            </tbody>
-        </table>
-        <br />
-        <br />
-        @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
-    </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.Identity.Name == "cdelu@admin.com" || User.Identity.Name == "colon@admin.com" || User.Identity.Name == "sanjose@admin.com")
+                    {
+                        <tr>
+                            <td>@Html.ActionLink("Agregar Producto", "Create", "Productoes", null, new { @class = "btn btn-primary"})</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+            <br />
+            <br />
+            @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
+        </div>
 }
 
 @section Scripts {

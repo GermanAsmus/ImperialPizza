@@ -28,5 +28,10 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult Action()
+        {
+            return View();
+        }
     }
 }

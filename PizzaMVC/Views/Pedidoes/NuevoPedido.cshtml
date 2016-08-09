@@ -38,38 +38,34 @@
                 @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
-
         <h2>Detalle Pedido</h2>
         <table class="table" id="myTable">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ProductoPedido.Cantidad)
-                    </th>
-                    <th>
-                        @Html.DisplayName("Precio Unitario")
-                    </th>
-                </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductoPedido.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayName("Precio Unitario")
+                </th>
+            </tr>
             @Html.Partial("_DetallePedido")
-            @*<tr>
-                <td>
-                    @Html.DisplayName("Producto")
-                </td>
-                <td>
-                    @Html.Editor("Cantidad", new { htmlAttributes = new { @class = "form-control" } })
-                </td>
-                <td>
-                    @Html.Display("Precio", new { htmlAttributes = new { @class = "form-control" } })
-                </td>
-            </tr>*@
         </table>
-        <script src="~/Scripts/agregarNuevoProducto.js"></script>
-        <button onclick="return myFunction()">Try it</button>
-       
+        <table>
+            <tr>
+                <td>
+                    <script src="~/Scripts/agregarNuevoProducto.js"></script>
+                    <button onclick="return myFunction()" class="btn btn-primary">Agregar Especialidad</button>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <br />
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Confirmar" id="NuevoPedido" class="btn btn-success" />
@@ -77,9 +73,8 @@
         </div>
 
         <div>
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("<- Volver al Inicio", "Index", "Home")
         </div>
-
     </div>
 }
 

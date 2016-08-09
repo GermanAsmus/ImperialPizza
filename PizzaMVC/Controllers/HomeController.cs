@@ -47,5 +47,10 @@ namespace PizzaMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult MejorRecorrido()
+        {
+            return View();
+        }
     }
 }
